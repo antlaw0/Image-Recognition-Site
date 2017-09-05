@@ -8,6 +8,16 @@ const app = new Clarifai.App({
 })
 
 
+function getImageDescription(callback) {
+
+    // TODO send image to API.
+    // when image fetched, call callback function with data.
+    // example data = "cat"
+
+    callback('cat'); 
+
+}
+
 var data = base64Img.base64Sync('cat.jpeg');   // Example image
 // Synchronous function, so no callback. There's an async one if you want to have better manners with your server time.
 
@@ -24,3 +34,5 @@ app.models.predict(Clarifai.GENERAL_MODEL, {base64:data}).then(
     console.error(err);  // TODO something more useful
   }
 );
+
+module.exports = getImageDescription

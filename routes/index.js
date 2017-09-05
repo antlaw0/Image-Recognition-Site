@@ -5,7 +5,15 @@ var clarifai = require('../helpers/image_recog');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
+  clarifai(function(data) {
+    console.log('This message is in index.js. The data received is ' + data );
+  })
+
   res.render('index', { title: 'Image Recognition' });
+
+
+
 });
 
 
