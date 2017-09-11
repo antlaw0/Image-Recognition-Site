@@ -1,0 +1,7 @@
+
+<h2>Select image to upload</h2>
+
+<form method="POST" enctype="multipart/form-data" action="upload_image">
+<input type="file" name='user_image' required accept="image/*">   <!-- Client can check for images only, but does not guarantee. Still need to test on the server. -->
+<input type="submit" value="Upload"></input>
+</form>
