@@ -6,7 +6,7 @@ const base64Img = require('base64-img');
 var fs = require('fs');
 
 const app = new Clarifai.App({
-  apiKey : 'YOUR KEY HERE'
+  apiKey : 'c9aad450048c41baaed15f75daee6518'
 })
 
 
