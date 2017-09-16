@@ -58,7 +58,9 @@ router.post('/upload_image', upload.single('user_image'), function(req, res, nex
     }
     else {
       console.log('This message is in index.js. The data received is ' + data );
-      return res.send(JSON.stringify(data));   // replace with something more user-friendly
+      //return res.send(JSON.stringify(data));   // replace with something more user-friendly
+	  return res.send(JSON.stringify(data.outputs.data.concepts.name));   // replace with something more user-friendly
+    
     }
   });
 
