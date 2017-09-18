@@ -59,8 +59,18 @@ router.post('/upload_image', upload.single('user_image'), function(req, res, nex
     else {
       console.log('This message is in index.js. The data received is ' + data );
       //return res.send(JSON.stringify(data));   // replace with something more user-friendly
-	  return res.send(JSON.stringify(data.outputs.data.concepts.name));   // replace with something more user-friendly
-    
+	  //return res.send(JSON.stringify(data.outputs.data.concepts.name));   // replace with something more user-friendly
+	  var concepts = data.outputs[0].data.concepts   // The JSON array from Clarifai. outputs is a 1-element array
+      var conceptsText = []   // empty array, will fill with Strings
+     for (var x = 0 ; x < concepts.length ; x++) {
+     conceptsText.push(concepts[x].name);
+	 console.log("Element "+x+" is "+conceptsText[x])
+	 
+      }//end of iterating through concepts
+	  
+	  //render result page
+	  res.render('result', { resultString: 'This is most likely an image of a '+conceptsText[2]+'.' });
+	  
     }
   });
 
