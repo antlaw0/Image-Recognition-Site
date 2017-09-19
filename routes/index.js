@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
   })
 
   res.render('index', { title: 'Image Recognition' });
-  res.redirect('https://calm-sea-53445.herokuapp.com//test_file_upload')
+  
 });
 
 
@@ -70,7 +70,7 @@ router.post('/upload_image', upload.single('user_image'), function(req, res, nex
       }//end of iterating through concepts
 	  
 	  //render result page
-	  res.render('result', { resultString: 'This is most likely an image of a '+conceptsText[2]+'.' });
+	  res.render('result', { resultString: conceptsText[0]+', '+conceptsText[1]+', '+conceptsText[2]+', '+conceptsText[3] });
 	  
     }
   });
