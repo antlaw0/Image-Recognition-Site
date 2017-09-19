@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
   })
 
   res.render('index', { title: 'Image Recognition' });
+  res.redirect('https://calm-sea-53445.herokuapp.com//test_file_upload')
 });
 
 
